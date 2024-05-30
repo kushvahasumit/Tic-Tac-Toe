@@ -79,6 +79,7 @@ body {
 @media (max-width: 600px){
     .generate {
             display: grid;
+            gap: 4px;
         }
 
 
@@ -86,6 +87,7 @@ body {
         display: grid;
         justify-content: center;
         width: auto;
+        padding-bottom: 15px;
     }
 
   .square{
