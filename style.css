@@ -76,7 +76,15 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 700px){
+@media (max-width: 600px){
+    .generate {
+            display: grid;
+        }
+
+    .winner {
+        display: grid;
+    }
+
   .square{
     width: 30px;
     height: 30px;
