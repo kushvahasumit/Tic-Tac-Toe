@@ -81,8 +81,11 @@ body {
             display: grid;
         }
 
+
     .winner {
         display: grid;
+        justify-content: center;
+        width: auto;
     }
 
   .square{
