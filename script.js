@@ -60,9 +60,100 @@ function matrixGeneration(){
         createBlock.classList.add("square");
         createBlock.textContent = matrixArray[i];
         createBlock.addEventListener("click",()=>{
-            
+            pushxo(i);
         })
         matrix.appendChild(createBlock);
     }
 }
 
+function pushxo(index){
+   matrixArray[index] = whosNext ? "X" : "O";
+//    switch player
+   whosNext = !whosNext; 
+   matrixGeneration();
+
+   const winner = checkWinner(matrixArray);
+   if (winner) {
+    currentStatus.textContent = `${winner} is Winner >> Play Again `;
+   }else if(matrixArray.every(Boolean)){ //if all sqare filled then
+    currentStatus.textContent = `Draw`;
+   }else{
+    currentStatus.textContent = `Next Turn : ${whosNext ? "X" : "O"}`;
+   }
+}
+
+
+function checkWinner(matrixArray){
+  const results = observewinnnig(gridSizeValue, winStreakValue);
+//   iterate all block of the matrix
+console.log(results)
+   for(const result of results){
+    // destructuring all sqare what value it carries
+    const [a, b, c, ...rest] = result;
+    if (
+        matrixArray[a] &&
+        matrixArray[a] === matrixArray[b] &&
+        matrixArray[a] === matrixArray[c] &&
+        rest.every((index) => matrixArray[a] === matrixArray[index])
+      ) {
+        return matrixArray[a]; // Return the winner ('X' or 'O')
+      }
+    }
+    return null;
+  }
+
+
+// check who is winner all possible condition
+//  take help from internet to generate this logic
+function observewinnnig(gridSizeValue,winStreakValue){
+    const results = [];
+
+ // check horizontal line of each block of square
+ for (let i = 0; i < gridSizeValue; i++) {
+   for (let j = 0; j <= gridSizeValue -winStreakValue; j++) {
+     let block = [];
+     for (let k = 0; k <winStreakValue; k++) {
+       block.push(i * gridSizeValue + j + k);
+     }
+     results.push(block);
+   }
+ }
+ // Vertical line results
+ for (let i = 0; i <= gridSizeValue -winStreakValue; i++) {
+   for (let j = 0; j < gridSizeValue; j++) {
+     let block = [];
+     for (let k = 0; k <winStreakValue; k++) {
+       block.push((i + k) * gridSizeValue + j);
+     }
+     results.push(block);
+   }
+ }
+ // Diagonal line results
+ for (let i = 0; i <= gridSizeValue -winStreakValue; i++) {
+   for (let j = 0; j <= gridSizeValue -winStreakValue; j++) {
+     let block = [];
+     for (let k = 0; k <winStreakValue; k++) {
+       block.push((i + k) * gridSizeValue + j + k);
+     }
+     results.push(block);
+   }
+ }
+ 
+ for (let i = 0; i <= gridSizeValue -winStreakValue; i++) {
+   for (let j =winStreakValue - 1; j < gridSizeValue; j++) {
+     let block = [];
+     for (let k = 0; k <winStreakValue; k++) {
+       block.push((i + k) * gridSizeValue + j - k);
+     }
+     results.push(block);
+   }
+ }
+ return results;
+}
+
+// this reloads page for new game play
+newGame.addEventListener("click",()=>{
+    document.location.reload();
+})
+
+startGameFunc();
