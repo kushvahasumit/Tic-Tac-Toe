@@ -1,0 +1,93 @@
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background-color: #e7e5e5;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container{
+  text-align: center;
+}
+
+.generate{
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.generate label{
+  margin-right: 20px;
+}
+
+.generate label input{
+    font-size: medium;
+    border-radius: 5px;
+}
+
+.generate button{
+    font-size: 16px;
+    font-weight: bolder;
+    height: 30px;
+    border: 2px solid rgb(116, 116, 116);
+    background-color: rgba(100, 99, 99, 0.759);
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+}
+.status{
+  margin-bottom: 18px;
+  font-size: 25px;
+}
+
+.board{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.winner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.winner button{
+    font-size: 16px;
+        font-weight: bolder;
+        height: 30px;
+        border: 2px solid rgb(116, 116, 116);
+        background-color: rgba(100, 99, 99, 0.759);
+        border-radius: 5px;
+        cursor: pointer;
+    color: #ffffff;
+}
+.square{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 700px){
+  .square{
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+  
+  .generate button {
+     margin-top: 12px;
+  }
+
+  .status{
+    font-size: 18px;
+  }
+}

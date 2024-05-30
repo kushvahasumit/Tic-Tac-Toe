@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+      <div class="container">
+    <h1>Tic-Tac-Toe</h1>
+    <div class="generate">
+      <label>
+        Grid Size :
+        <input type="number" id="gridSize" min="3" max="10" value="3">
+      </label>
+      <label>
+        Win Streak :
+        <input type="number" id="winStreak" min="3" max="3" value="3">
+      </label>
+      <button id="startGame">Let's Play</button>
+    </div>
+    <div class="winner"> 
+    <div class="status" id="status"></div>
+    <button id="newGame">New Game</button>
+    </div>
+   
+     <div class="board" id="board"></div>
+    
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
