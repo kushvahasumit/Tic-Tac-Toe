@@ -14,7 +14,7 @@ This is a customizable Tic-Tac-Toe game that allows users to define the grid siz
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/customizable-tic-tac-toe.git
+    git clone https://github.com/kushvahasumit/Tic-Tac-Toe.git
     ```
 2. **Navigate to the Project Directory**:
     
@@ -36,6 +36,8 @@ This is a customizable Tic-Tac-Toe game that allows users to define the grid siz
     - Players take turns clicking on the grid to place their marks (X or O).
     - The game will automatically check for a winner or a draw after each move.
     - The game status will be displayed below the grid.
+
+## Live Link :: https://tic3-tac2-toe1.netlify.app/
 
 ## Project Structure
 
